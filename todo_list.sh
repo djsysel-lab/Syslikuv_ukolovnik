@@ -29,10 +29,8 @@ add_task() {
         echo "Příklad: $0 add \"Nakoupit mléko\""
         exit 1
     fi
-    local date_created=$(date '+%Y-%m-%d %H:%M')
-    echo "[ ]|$1|$date_created|" >> "$TODO_FILE"
+    echo "[ ] $1" >> "$TODO_FILE"
     echo "✓ Úkol přidán: $1"
-    echo "  Vytvořeno: $date_created"
 }
 
 # Funkce pro zobrazení seznamu
@@ -44,13 +42,8 @@ list_tasks() {
     
     echo "=== SEZNAM ÚKOLŮ ==="
     local i=1
-    while IFS='|' read -r status task date_created date_done; do
-        echo "$i. $status $task"
-        echo "   Vytvořeno: $date_created"
-        if [ -n "$date_done" ]; then
-            echo "   Splněno: $date_done"
-        fi
-        echo ""
+    while IFS= read -r line; do
+        echo "$i. $line"
         ((i++))
     done < "$TODO_FILE"
 }
@@ -69,20 +62,11 @@ mark_done() {
         exit 1
     fi
     
-    local line=$(sed -n "${1}p" "$TODO_FILE")
+    local task=$(sed -n "${1}p" "$TODO_FILE")
+    local done_task=$(echo "$task" | sed 's/\[ \]/[X]/')
     
-    # Kontrola, zda již není splněno
-    if [[ "$line" == "[X]|"* ]]; then
-        echo "Tento úkol je již označen jako splněný"
-        exit 0
-    fi
-    
-    local date_done=$(date '+%Y-%m-%d %H:%M')
-    local new_line=$(echo "$line" | sed "s/\[ \]/[X]/" | sed "s/|$/|$date_done/")
-    
-    sed -i "${1}s|.*|$new_line|" "$TODO_FILE"
+    sed -i "${1}s/.*/$done_task/" "$TODO_FILE"
     echo "✓ Úkol označen jako splněný"
-    echo "  Splněno: $date_done"
 }
 
 # Funkce pro smazání úkolu
