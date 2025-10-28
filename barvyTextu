@@ -10,8 +10,5 @@ CYAN='\e[36m'
 WHITE='\e[37m'
 RESET='\e[0m'
 
-# Použití
-echo -e "${RED}Chyba: Soubor nenalezen${RESET}"
-echo -e "${GREEN}✓ Úspěch${RESET}"
-echo -e "${YELLOW}⚠ Varování${RESET}"
-echo -e "${BLUE}ℹ Informace${RESET}"
+# Příklad Použití : echo -e "${RED}Chyba: Soubor nenalezen${RESET}"
+
