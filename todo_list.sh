@@ -45,7 +45,7 @@ show_help() {
     echo "=========="
     echo -e "${YELLOW} Příkazy: ${RESET}"
     echo "=========="
-    echo -e "${YELLOW}  add ${RESET}\"text\"      - Přidat nový úkol (text vždy do uvozovek)"
+    echo -e "${YELLOW}  add ${RESET}\"text\"      - Přidat nový úkol (celý text úkolu vždy do uvozovek)"
     echo -e "${YELLOW}  list ${RESET}           - Zobrazit všechny úkoly"
     echo -e "${YELLOW}  done ${RESET}[číslo]    - Označit úkol jako splněný"
     echo -e "${YELLOW}  delete ${RESET}[číslo]  - Smazat úkol"
