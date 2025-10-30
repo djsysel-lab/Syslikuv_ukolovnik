@@ -40,18 +40,22 @@ log_action() {
         
 show_help() {
     echo""
-    echo "=== SEZNAM ÚKOLŮ ==="
+    echo " === SEZNAM ÚKOLŮ === "
     echo ""
     echo "Použití: $0 [příkaz]"
     echo ""
-    echo "Volby:"
-    echo "  add \"text\"      - Přidat nový úkol (text vždy do uvozovek)"
-    echo "  list            - Zobrazit všechny úkoly"
-    echo "  done [číslo]    - Označit úkol jako splněný"
-    echo "  delete [číslo]  - Smazat úkol"
-    echo "  clear           - Smazat všechny úkoly"
-    echo "  history         - Zobrazit historii operací"
-    echo "  help            - Zobrazit tuto nápovědu"
+    echo -e "${YELLOW} Příkazy: ${RESET}"
+    echo""
+    echo -e "${YELLOW}  add ${RESET}\"text\"      - Přidat nový úkol (text vždy do uvozovek)"
+    echo -e "${YELLOW}  list ${RESET}           - Zobrazit všechny úkoly"
+    echo -e "${YELLOW}  done ${RESET}[číslo]    - Označit úkol jako splněný"
+    echo -e "${YELLOW}  delete ${RESET}[číslo]  - Smazat úkol"
+    echo -e "${YELLOW}  clear ${RESET}          - Smazat všechny úkoly"
+    echo -e "${YELLOW}  history ${RESET}        - Zobrazit historii operací"
+    echo -e "${YELLOW}  help ${RESET}           - Zobrazit tuto nápovědu"
+    echo""
+    echo""    
+    
 }
 
         # Funkce pro přidání úkolu
