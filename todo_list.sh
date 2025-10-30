@@ -21,7 +21,7 @@
         source ./barvyTextu.sh
 
                         else
-                echo " CHYBA nenalezen soubor barvyTextu.sh "
+                echo " CHYBA nenalezen soubor : barvyTextu.sh "
                 echo " Texty budou monochromatické"
         fi
 
@@ -35,7 +35,7 @@
     echo "Použití: $0 [příkaz]"
     echo ""
     echo "Volby:"
-    echo "  add \"text\"          - Přidat nový úkol"
+    echo "  add \"text\"      - Přidat nový úkol"
     echo "  list            - Zobrazit všechny úkoly"
     echo "  done [číslo]    - Označit úkol jako splněný"
     echo "  delete [číslo]  - Smazat úkol"
@@ -63,7 +63,7 @@
         list_tasks() {
     if [ ! -s "$TODO_FILE" ];
     then
-       echo -e "${CYEN}Seznam úkolů je prázdný.${RESET}"
+       echo -e "${CYEN} Seznam úkolů je prázdný. ${RESET}"
         return
     fi
 
@@ -81,14 +81,14 @@
         mark_done() {
     if [ -z "$1" ];
     then
-        echo -e "${RED}Chyba: Musíte zadat číslo úkolu${RESET}"
+        echo -e "${RED} Chyba: Musíte zadat číslo úkolu ${RESET}"
         exit 1
     fi
 
     local line_count=$(wc -l < "$TODO_FILE")
 
     if [ "$1" -gt "$line_count" ] || [ "$1" -lt 1 ]; then
-        echo "Chyba: Neplatné číslo úkolu"
+        echo -e "${RED} Chyba: Neplatné číslo úkolu ${RESET}"
         exit 1
     fi
 
@@ -96,7 +96,7 @@
     local done_task=$(echo "$task" | sed 's/\[ \]/[X]/')
 
     sed -i "${1}s/.*/$done_task/" "$TODO_FILE"
-    echo "✓ Úkol označen jako splněný"
+    echo -e "${CYEN} ✓ Úkol označen jako splněný ${RESET}"
         }
 
                 # Funkce pro smazání úkolu
@@ -105,32 +105,32 @@
         delete_task() {
     if [ -z "$1" ];
     then
-        echo "Chyba: Musíte zadat číslo úkolu"
+        echo -e "${RED} Chyba: Musíte zadat číslo úkolu ${RESET}"
         exit 1
     fi
 
     local line_count=$(wc -l < "$TODO_FILE")
 
     if [ "$1" -gt "$line_count" ] || [ "$1" -lt 1 ]; then
-        echo "Chyba: Neplatné číslo úkolu"
+       echo -e "${RED} Chyba: Neplatné číslo úkolu ${RESET}"
         exit 1
     fi
 
     sed -i "${1}d" "$TODO_FILE"
-    echo "✓ Úkol smazán"
+   echo -e "${CYEN} ✓ Úkol smazán ${RESET}"
         }
 
                 # Funkce pro smazání všech úkolů
 
 
         clear_all() {
-    read -p "Opravdu chcete smazat všechny úkoly? (ano/ne): " confirm
+    read -p  "Opravdu chcete smazat všechny úkoly? (ano/ne):" confirm
     if [ "$confirm" = "ano" ];
     then
         > "$TODO_FILE"
-        echo "✓ Všechny úkoly smazány"
+        echo -e "${CYEN} ✓ Všechny úkoly smazány ${RESET}"
     else
-        echo "Operace zrušena"
+        echo -e "${CYEN} Operace zrušena {RESET}"
     fi
         }
 
@@ -157,7 +157,7 @@
         show_help
         ;;
     *)
-        echo "Neznámý příkaz: $1"
+        echo -e "${RED}Neznámý příkaz: $1 ${RESET}"
         show_help
         exit 1
         ;;
