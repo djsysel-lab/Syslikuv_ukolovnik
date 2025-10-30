@@ -16,5 +16,7 @@ Skript kontroluje správnost příkazů
 
 Úkol lze smazat jednotlivě (zadáním jeho čísla), ale i všehny najednou, u všech najednou vyžaduje potvrzení.
 
+Historie lze smazat.
+
 Chybové hlašky se zobrazují červeně, informativní světle modře, potvrzující hláška zlutě.
 
