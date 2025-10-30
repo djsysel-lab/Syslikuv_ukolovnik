@@ -1,36 +1,43 @@
 #!/bin/bash
-# Soubor pro uložení úkolů
+        # Soubor pro uložení úkolů
+        
 TODO_FILE="$HOME/ukolovnik/.todo_list.txt"
 LOG_FILE="$HOME/ukolovnik/.todo_history.log"
 
-# Vytvoření souboru, pokud neexistuje
+        # Vytvoření souboru, pokud neexistuje
+        
 if [ ! -f "$TODO_FILE" ];
 then
     touch "$TODO_FILE"
 fi
 
-# Vytvoření log souboru, pokud neexistuje
+        # Vytvoření log souboru, pokud neexistuje
+        
 if [ ! -f "$LOG_FILE" ];
 then
     touch "$LOG_FILE"
 fi
 
-# Pokusí se načíst barvyTextu.sh
+        # Pokusí se načíst barvyTextu.sh
+        
 if [ -f "./barvyTextu.sh" ];
 then
     source ./barvyTextu.sh
+    
 else
     echo " CHYBA nenalezen soubor : barvyTextu.sh "
     echo " Texty budou monochromatické"
 fi
 
-# Funkce pro logování akcí
+        # Funkce pro logování akcí
+        
 log_action() {
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
     echo "[$timestamp] $1" >> "$LOG_FILE"
 }
 
-# Funkce pro zobrazení nápovědy
+        # Funkce pro zobrazení nápovědy
+        
 show_help() {
     echo""
     echo "=== SEZNAM ÚKOLŮ ==="
@@ -47,7 +54,8 @@ show_help() {
     echo "  help            - Zobrazit tuto nápovědu"
 }
 
-# Funkce pro přidání úkolu
+        # Funkce pro přidání úkolu
+        
 add_task() {
     if [ -z "$1" ];
     then
@@ -60,7 +68,8 @@ add_task() {
     log_action "PŘIDÁNO: $1"
 }
 
-# Funkce pro zobrazení seznamu
+        # Funkce pro zobrazení seznamu
+
 list_tasks() {
     if [ ! -s "$TODO_FILE" ];
     then
@@ -75,7 +84,8 @@ list_tasks() {
     done < "$TODO_FILE"
 }
 
-# Funkce pro označení úkolu jako splněného
+        # Funkce pro označení úkolu jako splněného
+
 mark_done() {
     if [ -z "$1" ];
     then
@@ -94,7 +104,8 @@ mark_done() {
     log_action "SPLNĚNO: $task"
 }
 
-# Funkce pro smazání úkolu
+        # Funkce pro smazání úkolu
+        
 delete_task() {
     if [ -z "$1" ];
     then
@@ -112,7 +123,8 @@ delete_task() {
     log_action "SMAZÁNO: $task"
 }
 
-# Funkce pro smazání všech úkolů
+        # Funkce pro smazání všech úkolů
+        
 clear_all() {
     read -p "$(echo -e '\033[38;5;220mOpravdu chcete smazat všechny úkoly? (ano/ne):\033[0m ')" confirm
     if [ "$confirm" = "ano" ];
@@ -126,7 +138,8 @@ clear_all() {
     fi
 }
 
-# Funkce pro zobrazení historie
+        # Funkce pro zobrazení historie
+        
 show_history() {
     if [ ! -s "$LOG_FILE" ];
     then
@@ -137,7 +150,8 @@ show_history() {
     cat "$LOG_FILE"
 }
 
-# Hlavní funkčnost programu
+        # Hlavní funkčnost programu
+        
 case "$1" in
     add)
         add_task "$2"
