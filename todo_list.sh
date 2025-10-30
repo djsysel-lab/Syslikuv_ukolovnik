@@ -54,7 +54,7 @@
         exit 1
     fi
     echo "[ ] $1" >> "$TODO_FILE"
-    echo "✓ Úkol přidán: $1"
+    echo -e "${CYEN} ✓ Úkol přidán:${RESET} $1"
         }
 
                 # Funkce pro zobrazení seznamu
@@ -124,7 +124,7 @@
 
 
         clear_all() {
-    read -p  "Opravdu chcete smazat všechny úkoly? (ano/ne):" confirm
+    read -p "$(echo -e '\033[38;5;220mOpravdu chcete smazat všechny úkoly? (ano/ne):\033[0m ')" confirm
     if [ "$confirm" = "ano" ];
     then
         > "$TODO_FILE"
