@@ -15,4 +15,4 @@ Skript kontroluje validitu vstupů
 Potvrzení před smazáním všech úkolů.
 
 Chybové hlašky se zobrazují červeně, informativní světle modře.
-
+Historie se ukládá do samostného souboru todo_history.log
