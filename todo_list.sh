@@ -76,7 +76,7 @@ list_tasks() {
        echo -e "${CYEN} Seznam úkolů je prázdný. ${RESET}"
         return
     fi
-    echo "=== SEZNAM ÚKOLŮ ==="
+    echo -e "${GREEN} === SEZNAM ÚKOLŮ === ${RESET}"
     local i=1
     while IFS= read -r line; do
         echo "$i. $line"
@@ -146,7 +146,7 @@ show_history() {
         echo -e "${CYEN} Historie je prázdná ${RESET}"
         return
     fi
-    echo "=== HISTORIE OPERACÍ ==="
+    echo -e "${GREEN} === HISTORIE OPERACÍ ===${RESET}"
     cat "$LOG_FILE"
 }
 
