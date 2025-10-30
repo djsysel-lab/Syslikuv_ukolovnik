@@ -45,7 +45,7 @@ show_help() {
     echo "Použití: $0 [příkaz]"
     echo ""
     echo "Volby:"
-    echo "  add \"text\"      - Přidat nový úkol"
+    echo "  add \"text\"      - Přidat nový úkol (vždy do uvozovek)"
     echo "  list            - Zobrazit všechny úkoly"
     echo "  done [číslo]    - Označit úkol jako splněný"
     echo "  delete [číslo]  - Smazat úkol"
