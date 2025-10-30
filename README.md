@@ -2,17 +2,19 @@
  
   Funkce:
 
-Úkoly se ukládají do souboru ~/ukolovnik/.todo_list.txt
+Úkoly se ukládají do souboru : ~/ukolovnik/.todo_list.txt
+
+Historie se ukládá do souboru: ~/ukolovnik/.todo_history.log
+
+Script si načítá další skript barvyTextu.sh a ověřuje zda tento soubor existuje, pokd ne oznámí chybu.
 
 Nesplněné úkoly mají označení [ ]
 
 Splněné úkoly mají označení [X]
 
-Skript kontroluje validitu vstupů
+Skript kontroluje správnost příkazů
 
-Úkol lze smazat. 
+Úkol lze smazat jednotlivě (zadáním jeho čísla), ale i všehny najednou, u všech najednou vyžaduje potvrzení.
 
-Potvrzení před smazáním všech úkolů.
+Chybové hlašky se zobrazují červeně, informativní světle modře, potvrzující hláška zlutě.
 
-Chybové hlašky se zobrazují červeně, informativní světle modře.
-Historie se ukládá do samostného souboru todo_history.log
