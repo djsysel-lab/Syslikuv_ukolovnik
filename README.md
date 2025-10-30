@@ -6,7 +6,7 @@
 
 Historie se ukládá do souboru: ~/ukolovnik/.todo_history.log
 
-Script si načítá další skript barvyTextu.sh a ověřuje zda tento soubor existuje, pokd ne oznámí chybu.
+Script, si načítá další soubor barvyTextu.sh a ověřuje, zda tento soubor existuje, pokd ne oznámí chybu.
 
 Nesplněné úkoly mají označení [ ]
 
