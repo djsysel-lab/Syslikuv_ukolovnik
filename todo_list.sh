@@ -52,7 +52,7 @@ show_help() {
     echo -e "${YELLOW}  clear ${RESET}          - Smazat všechny úkoly"
     echo -e "${YELLOW}  history ${RESET}        - Zobrazit historii operací"
     echo -e "${YELLOW}  help ${RESET}           - Zobrazit tuto nápovědu"
-    echo -e "${YELLOW}  clearhistory             - Smazat historii operací"
+    echo -e "${YELLOW}  clearhistory ${RESET}   - Smazat historii operací"
     echo ""
     echo " ======================================= HELP ======================================="   
     
