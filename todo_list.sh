@@ -45,7 +45,6 @@ show_help() {
     echo "Použití: $0 [příkaz]"
     echo ""
     echo -e "${YELLOW} Příkazy: ${RESET}"
-    echo""
     echo -e "${YELLOW}  add ${RESET}\"text\"      - Přidat nový úkol (text vždy do uvozovek)"
     echo -e "${YELLOW}  list ${RESET}           - Zobrazit všechny úkoly"
     echo -e "${YELLOW}  done ${RESET}[číslo]    - Označit úkol jako splněný"
@@ -53,8 +52,8 @@ show_help() {
     echo -e "${YELLOW}  clear ${RESET}          - Smazat všechny úkoly"
     echo -e "${YELLOW}  history ${RESET}        - Zobrazit historii operací"
     echo -e "${YELLOW}  help ${RESET}           - Zobrazit tuto nápovědu"
-    echo""
-    echo""    
+    echo ""
+    echo ""    
     
 }
 
