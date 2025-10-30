@@ -12,5 +12,7 @@ Skript kontroluje validitu vstupů
 
 Úkol lze smazat. 
 
-Potvrzení před smazáním všech úkolů
+Potvrzení před smazáním všech úkolů.
+
+Chybové hlašky se zobrazují červeně, informativní světle modře.
 
