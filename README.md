@@ -1,6 +1,6 @@
   **Syslíkův úkolovník**
- 
-  Funkce:
+  
+ Popis funkcí :
 
 - Úkoly se ukládají do souboru : ~/ukolovnik/.todo_list.txt
 
