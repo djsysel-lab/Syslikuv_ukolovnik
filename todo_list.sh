@@ -1,5 +1,5 @@
 #!/bin/bash
-        # Soubor pro uložení úkolů
+        # Soubor pro uložení úkolů a historie
         
 TODO_FILE="$HOME/ukolovnik/.todo_list.txt"
 LOG_FILE="$HOME/ukolovnik/.todo_history.log"
