@@ -29,6 +29,17 @@ else
     echo " Texty budou monochromatické"
 fi
 
+        # Pokusí se načíst funkce_todo.sh
+        
+if [ -f "./barvyTextu.sh" ];
+then
+    source ./funkce_todo.sh
+    
+else
+    echo " CHYBA nenalezen soubor : barvyTextu.sh "
+    echo " Texty budou monochromatické"
+fi
+
         # Funkce pro logování akcí
         
 log_action() {
@@ -52,8 +63,6 @@ show_help() {
     echo -e "${YELLOW}  clear ${RESET}          - Smazat všechny úkoly"
     echo -e "${YELLOW}  history ${RESET}        - Zobrazit historii operací"
     echo -e "${YELLOW}  help ${RESET}           - Zobrazit tuto nápovědu"
-    echo -e "${YELLOW}  clearhistory ${RESET}   - Smazat historii operací"
-    echo ""
     echo " ======================================= HELP ======================================= "   
     
 }
@@ -154,17 +163,6 @@ show_history() {
     cat "$LOG_FILE"
 }
 
-        # Funkce pro smazání historie
-clear_history() {
-    read -p "$(echo -e '\033[38;5;220mOpravdu chcete smazat celou historii? (ano/ne):\033[0m ')" confirm
-    if [ "$confirm" = "ano" ];
-    then
-        > "$LOG_FILE"
-        echo -e "${CYEN} ✓ Historie byla smazána ${RESET}"
-    else
-        echo -e "${CYEN} Operace zrušena ${RESET}"
-    fi
-}
 
 # Hlavní funkčnost programu
 case "$1" in
@@ -185,9 +183,6 @@ case "$1" in
         ;;
     history)
         show_history
-        ;;
-    clearhistory)
-        clear_history
         ;;
     help|--help|-h)
         show_help
