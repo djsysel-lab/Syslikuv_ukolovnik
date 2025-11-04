@@ -1,10 +1,13 @@
-# Funkce pro logování akcí
+#!/bin/bash
+       
+         # Funkce pro logování akcí
         
 log_action() {
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
     echo "[$timestamp] $1" >> "$LOG_FILE"
 }
 
+       
         # Funkce pro zobrazení nápovědy
         
 show_help() {
@@ -25,6 +28,7 @@ show_help() {
     
 }
 
+       
         # Funkce pro přidání úkolu
         
 add_task() {
@@ -39,6 +43,7 @@ add_task() {
     log_action "PŘIDÁNO: $1"
 }
 
+        
         # Funkce pro zobrazení seznamu
 
 list_tasks() {
@@ -55,6 +60,7 @@ list_tasks() {
     done < "$TODO_FILE"
 }
 
+       
         # Funkce pro označení úkolu jako splněného
 
 mark_done() {
@@ -75,6 +81,7 @@ mark_done() {
     log_action "SPLNĚNO: $task"
 }
 
+       
         # Funkce pro smazání úkolu
         
 delete_task() {
@@ -94,6 +101,7 @@ delete_task() {
     log_action "SMAZÁNO: $task"
 }
 
+        
         # Funkce pro smazání všech úkolů
         
 clear_all() {
@@ -109,6 +117,7 @@ clear_all() {
     fi
 }
 
+        
         # Funkce pro zobrazení historie
         
 show_history() {
