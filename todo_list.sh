@@ -25,7 +25,7 @@ then
     source ./barvyTextu.sh
     
 else
-    echo " CHYBA nenalezen soubor : barvyTextu.sh "
+    echo -e "\e[31m CHYBA nenalezen soubor : barvyTextu.sh \e[0m "
     echo " Texty budou monochromatické"
 fi
 
@@ -36,8 +36,8 @@ then
     source ./funkce_todo.sh
     
 else
-    echo " CHYBA nenalezen soubor : barvyTextu.sh "
-    echo " Texty budou monochromatické"
+    echo -e "\e[31m CHYBA nenalezen soubor : funkce_todo.sh \e[0m "
+    echo -e "\e[31m Nelze pokračovat \e[0m "
 fi
 
         
