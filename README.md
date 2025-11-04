@@ -6,17 +6,19 @@
 
 - Historie se ukládá do souboru: ~/ukolovnik/.todo_history.log
 
-- Script, si načítá další soubor barvyTextu.sh a ověřuje, zda tento soubor existuje, pokd ne oznámí chybu.
-
+- Script, si načítá další soubor *barvyTextu.sh* a *funkce_todo.sh*. Ověřuje, zda tyto soubory existují, pokd ne, vypíše chybu.
+  
+- Pokud existuje soubor "barvyTextu.sh" tak :
+  - *chybové hlašky se zobrazují červeně*
+  - *informativní světle modře*
+  - *potvrzující hláška zlutě*
+  
 - Nesplněné úkoly mají označení [ ]
 
 - Splněné úkoly mají označení [X]
 
-- Skript kontroluje správnost příkazů
-
 - Úkol lze smazat jednotlivě (zadáním jeho čísla), ale i všehny najednou, u všech najednou vyžaduje potvrzení.
 
-- Historie lze smazat.
-
-- Chybové hlašky se zobrazují červeně, informativní světle modře, potvrzující hláška zlutě.
-
+- Skript kontroluje správnost příkazů, v případě špatného zadání, vyvolá *help* (nápovědu).
+  
+- Lze vyvolat *help* (nápovědu).  
