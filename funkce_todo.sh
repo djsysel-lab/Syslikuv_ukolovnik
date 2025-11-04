@@ -1,34 +1,6 @@
 #!/bin/bash
        
-         # Funkce pro logování akcí
-        
-log_action() {
-    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-    echo "[$timestamp] $1" >> "$LOG_FILE"
-}
-
-       
-        # Funkce pro zobrazení nápovědy
-        
-show_help() {
-    echo " ======================================= HELP ======================================= "
-    echo " ==================================== SEZNAM ÚKOLŮ ================================== "
-    echo -e "Použití: $0 [${YELLOW}příkaz${RESET}]"
-    echo "=========="
-    echo -e "${YELLOW} Příkazy: ${RESET}"
-    echo "=========="
-    echo -e "${YELLOW}  add ${RESET}\"text\"      - Přidat nový úkol (celý text úkolu vždy do uvozovek)"
-    echo -e "${YELLOW}  list ${RESET}           - Zobrazit všechny úkoly"
-    echo -e "${YELLOW}  done ${RESET}[číslo]    - Označit úkol jako splněný"
-    echo -e "${YELLOW}  delete ${RESET}[číslo]  - Smazat úkol"
-    echo -e "${YELLOW}  clear ${RESET}          - Smazat všechny úkoly"
-    echo -e "${YELLOW}  history ${RESET}        - Zobrazit historii operací"
-    echo -e "${YELLOW}  help ${RESET}           - Zobrazit tuto nápovědu"
-    echo " ======================================= HELP ======================================= "   
-    
-}
-
-       
+      
         # Funkce pro přidání úkolu
         
 add_task() {
@@ -117,8 +89,37 @@ clear_all() {
     fi
 }
 
+      # Funkce pro zobrazení nápovědy
         
-        # Funkce pro zobrazení historie
+show_help() {
+    echo " ======================================= HELP ======================================= "
+    echo " ==================================== SEZNAM ÚKOLŮ ================================== "
+    echo -e "Použití: $0 [${YELLOW}příkaz${RESET}]"
+    echo "=========="
+    echo -e "${YELLOW} Příkazy: ${RESET}"
+    echo "=========="
+    echo -e "${YELLOW}  add ${RESET}\"text\"      - Přidat nový úkol (celý text úkolu vždy do uvozovek)"
+    echo -e "${YELLOW}  list ${RESET}           - Zobrazit všechny úkoly"
+    echo -e "${YELLOW}  done ${RESET}[číslo]    - Označit úkol jako splněný"
+    echo -e "${YELLOW}  delete ${RESET}[číslo]  - Smazat úkol"
+    echo -e "${YELLOW}  clear ${RESET}          - Smazat všechny úkoly"
+    echo -e "${YELLOW}  history ${RESET}        - Zobrazit historii operací"
+    echo -e "${YELLOW}  help ${RESET}           - Zobrazit tuto nápovědu"
+    echo " ======================================= HELP ======================================= "   
+    
+}
+
+
+
+         # Funkce pro logování akcí
+        
+log_action() {
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    echo "[$timestamp] $1" >> "$LOG_FILE"
+}
+
+
+               # Funkce pro zobrazení historie
         
 show_history() {
     if [ ! -s "$LOG_FILE" ];
@@ -129,5 +130,4 @@ show_history() {
     echo -e "${GREEN} === HISTORIE OPERACÍ ===${RESET}"
     cat "$LOG_FILE"
 }
-
-
+        
