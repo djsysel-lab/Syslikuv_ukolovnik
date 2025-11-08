@@ -6,7 +6,7 @@
 
 - Historie se ukládá do souboru: ~/ukolovnik/.todo_history.log
 
-- Script, si načítá další soubor *barvyTextu.sh* a *funkce_todo.sh*. Ověřuje, zda tyto soubory existují, pokd ne, vypíše chybu.
+- Script, si načítá další soubor *barvyTextu.sh* a *funkce_todo.sh*. Ověřuje, zda tyto soubory existují, pokud ne, vypíše chybu.
   
 - Pokud existuje soubor "barvyTextu.sh" tak :
   - *chybové hlašky se zobrazují červeně*
