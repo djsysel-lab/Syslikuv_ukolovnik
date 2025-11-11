@@ -82,7 +82,7 @@ clear_all() {
     then
         local count=$(wc -l < "$TODO_FILE")
         > "$TODO_FILE"
-        echo -e "${CYEN} ✓ Všechny úkoly smazány ${RESET}"
+        echo -e "${CYAN} ✓ Všechny úkoly smazány ${RESET}"
         log_action "VYMAZÁNO VŠECHNO: $count úkolů"
     else
         echo -e "${CYAN} Operace zrušena ${RESET}"
