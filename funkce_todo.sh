@@ -92,8 +92,10 @@ clear_all() {
       # Funkce pro zobrazení nápovědy
         
 show_help() {
-    echo -e "${YELLOW} ======================================= HELP =======================================${RESET}"
-    echo " ==================================== SEZNAM ÚKOLŮ =================================="
+    echo ""
+    echo -e "${BOLD}${CYAN}╔═══════════════════════════════════════════════════════════════════════════╗${RESET}"
+    echo -e "${BOLD}${CYAN}║                            SEZNAM ÚKOLŮ - NÁPOVĚDA                        ║${RESET}"
+    echo -e "${BOLD}${CYAN}╚═══════════════════════════════════════════════════════════════════════════╝${RESET}"
     echo -e "Použití: $0 [${YELLOW}příkaz${RESET}]"
     echo " =========="
     echo -e "${YELLOW}Příkazy:${RESET}"
