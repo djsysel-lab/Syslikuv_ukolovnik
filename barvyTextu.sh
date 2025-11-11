@@ -1,6 +1,6 @@
 #!/bin/bash
 
-  # Definování barev
+# Definování barev
   
 RED='\e[31m'
 GREEN='\e[32m'
@@ -9,14 +9,13 @@ BLUE='\e[34m'
 CYAN='\033[36m'
 RESET='\e[0m'
 
-  # Definice efektů
+# Definice efektů
   
   #Tučné
-  
-BOLD='\e[1m'
+        BOLD='\e[1m'
   
   #Blikající
   
-BLINK='\e[5m'
+      BLINK='\e[5m'
 
 
