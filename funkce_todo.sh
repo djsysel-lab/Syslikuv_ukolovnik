@@ -53,6 +53,25 @@ mark_done() {
     log_action "SPLNĚNO: $task"
 }
 
+       # Funkce pro odznačení úkolu
+
+mark_undone() {
+    if [ -z "$1" ];
+    then
+        echo -e "${RED} Chyba: Musíte zadat číslo úkolu ${RESET}"
+        exit 1
+    fi
+    local line_count=$(wc -l < "$TODO_FILE")
+    if [ "$1" -gt "$line_count" ] || [ "$1" -lt 1 ]; then
+        echo -e "${RED} Chyba: Neplatné číslo úkolu ${RESET}"
+        exit 1
+    fi
+    local task=$(sed -n "${1}p" "$TODO_FILE")
+    local undone_task=$(echo "$task" | sed 's/\[¤\]/[ ]/')
+    sed -i "${1}s/.*/$undone_task/" "$TODO_FILE"
+    echo -e "${CYAN} ✓ Úkol označen jako nesplněný ${RESET}"
+    log_action "ODZNAČENO: $task"
+}
        
         # Funkce pro smazání úkolu
         
@@ -96,13 +115,14 @@ show_help() {
     echo -e "${BOLD}${CYAN}  ╔═══════════════════════════════════════════════════════════════════════════╗${RESET}"
     echo -e "${BOLD}${CYAN}  ║                            SEZNAM ÚKOLŮ - NÁPOVĚDA                        ║${RESET}"
     echo -e "${BOLD}${CYAN}  ╚═══════════════════════════════════════════════════════════════════════════╝${RESET}"
-    echo -e "  Použití: $0 [${YELLOW}příkaz${RESET}]"
-    echo " =========="
-    echo -e "${YELLOW}  Příkazy:${RESET}"
+    echo -e "    Použití: $0 [${YELLOW}příkaz${RESET}]"
+    echo "   =========="
+    echo -e "${YELLOW}    Příkazy:${RESET}"
     echo " =========="
     echo -e "${YELLOW}   add${RESET} \"text\"       - Přidat nový úkol (celý text úkolu vždy do uvozovek)"
     echo -e "${YELLOW}   list${RESET}             - Zobrazit všechny úkoly"
     echo -e "${YELLOW}   done${RESET} [číslo]     - Označit úkol jako splněný"
+    echo -e "${YELLOW}   undone${RESET}[číslo]    - Odznačit splněný úkol"
     echo -e "${YELLOW}   delete${RESET} [číslo]   - Smazat úkol"
     echo -e "${YELLOW}   clear${RESET}            - Smazat všechny úkoly"
     echo -e "${YELLOW}   history${RESET}          - Zobrazit historii operací"
