@@ -24,7 +24,7 @@ list_tasks() {
        echo -e "${CYEN} Seznam úkolů je prázdný. ${RESET}"
         return
     fi
-    echo -e "${GREEN} === SEZNAM ÚKOLŮ === ${RESET}"
+    echo -e "${GREEN} ======================================= SEZNAM ÚKOLŮ ======================================= ${RESET}"
     local i=1
     while IFS= read -r line; do
         echo "$i. $line"
