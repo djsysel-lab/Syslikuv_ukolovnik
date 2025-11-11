@@ -15,9 +15,9 @@
   
 - Nesplněné úkoly mají označení [ ]
 
-- Splněné úkoly mají označení [X]
-
-- Úkol lze smazat jednotlivě (zadáním jeho čísla), ale i všehny najednou, u všech najednou vyžaduje potvrzení.
+- Splněné úkoly mají označení [¤]
+- Splněný úkol lze odznačit a učinit z něj zase nesplněný.
+- Úkol lze smazat jednotlivě (zadáním jeho čísla), ale i všechny najednou, u všech najednou vyžaduje potvrzení.
 
 - Skript kontroluje správnost příkazů, v případě špatného zadání, vyvolá *help* (nápovědu).
   
