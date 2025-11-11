@@ -28,13 +28,13 @@ fi
 
         # Pokusí se načíst barvyTextu.sh
         
-if [ -f "./barvyTextu.sh" ];
-then
+if [ -f "./barvyTextu.sh" ]; then
     source ./barvyTextu.sh
-    
 else
-    echo -e "\e[31m CHYBA nenalezen soubor : barvyTextu.sh \e[0m "
-    echo " Texty budou monochromatické"
+    RED="\e[31m"
+    RESET="\e[0m"
+    echo -e "${RED}CHYBA: nenalezen soubor barvyTextu.sh${RESET}"
+    echo "Texty budou monochromatické"
 fi
 
         # Pokusí se načíst funkce_todo.sh
