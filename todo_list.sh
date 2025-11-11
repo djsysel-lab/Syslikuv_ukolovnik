@@ -33,7 +33,7 @@ if [ -f "./barvyTextu.sh" ]; then
 else
     RED="\e[31m"
     RESET="\e[0m"
-    echo -e "${RED}CHYBA: nenalezen soubor barvyTextu.sh${RESET}"
+    echo -e "${RED}CHYBA: nenalezen soubor barvyTextu.sh ${RESET}"
     echo "Texty budou monochromatické"
 fi
 
@@ -44,8 +44,10 @@ then
     source ./funkce_todo.sh
     
 else
-    echo -e "\e[31m FATÁLNÍ CHYBA!! nenalezen soubor : funkce_todo.sh \e[0m "
-    echo -e "\e[31m Nelze pokračovat \e[0m "
+    RED="\e[31m"
+    RESET="\e[0m"
+    echo -e "${RED} FATÁLNÍ CHYBA!! nenalezen soubor : funkce_todo.sh ${RESET}"
+    echo -e "${RED} Nelze pokračovat :-/ ${RESET}"
     exit 1
 fi
 
