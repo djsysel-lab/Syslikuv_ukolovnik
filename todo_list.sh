@@ -34,7 +34,10 @@ else
     RED="\e[31m"
     RESET="\e[0m"
     echo -e "${RED}CHYBA: nenalezen soubor barvyTextu.sh ${RESET}"
+    echo ""
     echo "Texty budou monochromatické"
+    echo""
+    echo""
 fi
 
         # Pokusí se načíst funkce_todo.sh
