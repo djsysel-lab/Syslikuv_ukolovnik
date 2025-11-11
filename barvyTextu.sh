@@ -10,6 +10,6 @@ CYAN='\033[36m'
 RESET='\e[0m'
 
 # Definice efektů
-BOLD='\e[1m'
+BOLD='\e[5m'
 
 
