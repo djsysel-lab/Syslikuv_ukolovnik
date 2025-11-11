@@ -11,7 +11,7 @@ add_task() {
         exit 1
     fi
     echo "[ ] $1" >> "$TODO_FILE"
-    echo -e "${CYAN} ✓ Úkol přidán:${RESET} $1"
+    echo -e "${CYAN}${BLINK} ✓ Úkol přidán:${RESET} $1"
     log_action "PŘIDÁNO: $1"
 }
 
@@ -49,7 +49,7 @@ mark_done() {
     local task=$(sed -n "${1}p" "$TODO_FILE")
     local done_task=$(echo "$task" | sed 's/\[ \]/[¤]/')
     sed -i "${1}s/.*/$done_task/" "$TODO_FILE"
-    echo -e "${CYAN} ✓ Úkol označen jako splněný ${RESET}"
+    echo -e "${CYAN}${BLINK} ✓ Úkol označen jako splněný ${RESET}"
     log_action "SPLNĚNO: $task"
 }
 
@@ -69,7 +69,7 @@ mark_undone() {
     local task=$(sed -n "${1}p" "$TODO_FILE")
     local undone_task=$(echo "$task" | sed 's/\[¤\]/[ ]/')
     sed -i "${1}s/.*/$undone_task/" "$TODO_FILE"
-    echo -e "${CYAN} ✓ Úkol označen jako nesplněný ${RESET}"
+    echo -e "${CYAN}${BLINK} ✓ Úkol označen jako nesplněný ${RESET}"
     log_action "ODZNAČENO: $task"
 }
        
@@ -88,7 +88,7 @@ delete_task() {
     fi
     local task=$(sed -n "${1}p" "$TODO_FILE")
     sed -i "${1}d" "$TODO_FILE"
-    echo -e "${CYAN} ✓ Úkol smazán ${RESET}"
+    echo -e "${CYAN}${BLINK} ✓ Úkol smazán ${RESET}"
     log_action "SMAZÁNO: $task"
 }
 
@@ -101,7 +101,7 @@ clear_all() {
     then
         local count=$(wc -l < "$TODO_FILE")
         > "$TODO_FILE"
-        echo -e "${CYAN} ✓ Všechny úkoly smazány ${RESET}"
+        echo -e "${CYAN}${BLINK} ✓ Všechny úkoly smazány ${RESET}"
         log_action "VYMAZÁNO VŠECHNO: $count úkolů"
     else
         echo -e "${CYAN} Operace zrušena ${RESET}"
