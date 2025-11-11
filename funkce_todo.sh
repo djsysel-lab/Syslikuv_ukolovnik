@@ -47,7 +47,7 @@ mark_done() {
         exit 1
     fi
     local task=$(sed -n "${1}p" "$TODO_FILE")
-    local done_task=$(echo "$task" | sed 's/\[ \]/[X]/')
+    local done_task=$(echo "$task" | sed 's/\[ \]/[¤]/')
     sed -i "${1}s/.*/$done_task/" "$TODO_FILE"
     echo -e "${CYAN} ✓ Úkol označen jako splněný ${RESET}"
     log_action "SPLNĚNO: $task"
