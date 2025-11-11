@@ -93,9 +93,9 @@ clear_all() {
         
 show_help() {
     echo ""
-    echo -e "${BOLD}${CYAN}╔═══════════════════════════════════════════════════════════════════════════╗${RESET}"
-    echo -e "${BOLD}${CYAN}║                            SEZNAM ÚKOLŮ - NÁPOVĚDA                        ║${RESET}"
-    echo -e "${BOLD}${CYAN}╚═══════════════════════════════════════════════════════════════════════════╝${RESET}"
+    echo -e "${BOLD}${CYAN}  ╔═══════════════════════════════════════════════════════════════════════════╗${RESET}"
+    echo -e "${BOLD}${CYAN}  ║                            SEZNAM ÚKOLŮ - NÁPOVĚDA                        ║${RESET}"
+    echo -e "${BOLD}${CYAN}  ╚═══════════════════════════════════════════════════════════════════════════╝${RESET}"
     echo -e "Použití: $0 [${YELLOW}příkaz${RESET}]"
     echo " =========="
     echo -e "${YELLOW}Příkazy:${RESET}"
@@ -107,7 +107,9 @@ show_help() {
     echo -e "${YELLOW}  clear${RESET}            - Smazat všechny úkoly"
     echo -e "${YELLOW}  history${RESET}          - Zobrazit historii operací"
     echo -e "${YELLOW}  help${RESET}             - Zobrazit tuto nápovědu"
-    echo " ======================================= HELP ======================================="   
+    echo -e "${BOLD}${CYAN}  ╔═══════════════════════════════════════════════════════════════════════════╗${RESET}"
+    echo -e "${BOLD}${CYAN}  ║                            SEZNAM ÚKOLŮ - NÁPOVĚDA                        ║${RESET}"
+    echo -e "${BOLD}${CYAN}  ╚═══════════════════════════════════════════════════════════════════════════╝${RESET}"
 }
 
 
