@@ -108,7 +108,6 @@ show_help() {
     echo -e "${YELLOW}  history${RESET}          - Zobrazit historii operací"
     echo -e "${YELLOW}  help${RESET}             - Zobrazit tuto nápovědu"
     echo -e "${BOLD}${CYAN}  ╔═══════════════════════════════════════════════════════════════════════════╗${RESET}"
-    echo -e "${BOLD}${CYAN}  ║                            SEZNAM ÚKOLŮ - NÁPOVĚDA                        ║${RESET}"
     echo -e "${BOLD}${CYAN}  ╚═══════════════════════════════════════════════════════════════════════════╝${RESET}"
     echo -e ""
 }
