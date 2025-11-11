@@ -53,6 +53,9 @@ case "$1" in
     done)
         mark_done "$2"
         ;;
+    undone)
+        mark_undone "$2"
+        ;;
     delete)
         delete_task "$2"
         ;;
