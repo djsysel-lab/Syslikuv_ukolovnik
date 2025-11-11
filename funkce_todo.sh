@@ -22,7 +22,9 @@ list_tasks() {
     if [ ! -s "$TODO_FILE" ];
     then
        echo -e "${CYAN} Seznam úkolů je prázdný. ${RESET}"
-        return
+       echo ""
+       echo ""
+    return
     fi
     echo -e "${GREEN} ======================================= SEZNAM ÚKOLŮ ======================================= ${RESET}"
     local i=1
