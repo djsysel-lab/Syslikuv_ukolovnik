@@ -9,5 +9,7 @@ BLUE='\e[34m'
 CYAN='\033[36m'
 RESET='\e[0m'
 
+# Definice efektů
+BOLD='\e[1m'
 
 
