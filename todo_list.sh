@@ -32,7 +32,7 @@ fi
 
         # Pokusí se načíst funkce_todo.sh
         
-if [ -f "./barvyTextu.sh" ];
+if [ -f "./funkce_todo.sh" ];
 then
     source ./funkce_todo.sh
     
