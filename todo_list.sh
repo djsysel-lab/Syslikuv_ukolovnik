@@ -50,7 +50,7 @@ else
     RED="\e[31m"
     RESET="\e[0m"
     echo -e "${RED} FATÁLNÍ CHYBA!! nenalezen soubor : funkce_todo.sh ${RESET}"
-    echo -e "${RED} Nelze pokračovat :-/ ${RESET}"
+    echo -e "${RED} Nelze pokračovat. ${RESET}"
     exit 1
 fi
 
