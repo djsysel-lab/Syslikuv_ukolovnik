@@ -37,9 +37,9 @@ then
     source ./funkce_todo.sh
     
 else
-    echo -e "\e[31m CHYBA nenalezen soubor : funkce_todo.sh \e[0m "
+    echo -e "\e[31m FATÁLNÍ CHYBA!! nenalezen soubor : funkce_todo.sh \e[0m "
     echo -e "\e[31m Nelze pokračovat \e[0m "
-fi
+done
 
         
 # Hlavní funkčnost programu
@@ -69,6 +69,8 @@ case "$1" in
         show_help
         ;;
     *)
+        echo -e ""
+        echo -e ""
         echo -e "${RED}Neznámý příkaz: $1 ${RESET}"
         show_help
         exit 1
