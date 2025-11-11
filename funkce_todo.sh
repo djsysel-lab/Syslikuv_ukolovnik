@@ -7,11 +7,11 @@ add_task() {
     if [ -z "$1" ];
     then
         echo -e "${RED} Chyba: Musíte zadat text úkolu ${RESET}"
-        echo -e "${CYEN} Příklad: $0 add \"Nakoupit mléko\" ${RESET}"
+        echo -e "${CYAN} Příklad: $0 add \"Nakoupit mléko\" ${RESET}"
         exit 1
     fi
     echo "[ ] $1" >> "$TODO_FILE"
-    echo -e "${CYEN} ✓ Úkol přidán:${RESET} $1"
+    echo -e "${CYAN} ✓ Úkol přidán:${RESET} $1"
     log_action "PŘIDÁNO: $1"
 }
 
@@ -21,7 +21,7 @@ add_task() {
 list_tasks() {
     if [ ! -s "$TODO_FILE" ];
     then
-       echo -e "${CYEN} Seznam úkolů je prázdný. ${RESET}"
+       echo -e "${CYAN} Seznam úkolů je prázdný. ${RESET}"
         return
     fi
     echo -e "${GREEN} ======================================= SEZNAM ÚKOLŮ ======================================= ${RESET}"
@@ -49,7 +49,7 @@ mark_done() {
     local task=$(sed -n "${1}p" "$TODO_FILE")
     local done_task=$(echo "$task" | sed 's/\[ \]/[X]/')
     sed -i "${1}s/.*/$done_task/" "$TODO_FILE"
-    echo -e "${CYEN} ✓ Úkol označen jako splněný ${RESET}"
+    echo -e "${CYAN} ✓ Úkol označen jako splněný ${RESET}"
     log_action "SPLNĚNO: $task"
 }
 
@@ -69,7 +69,7 @@ delete_task() {
     fi
     local task=$(sed -n "${1}p" "$TODO_FILE")
     sed -i "${1}d" "$TODO_FILE"
-    echo -e "${CYEN} ✓ Úkol smazán ${RESET}"
+    echo -e "${CYAN} ✓ Úkol smazán ${RESET}"
     log_action "SMAZÁNO: $task"
 }
 
@@ -85,7 +85,7 @@ clear_all() {
         echo -e "${CYEN} ✓ Všechny úkoly smazány ${RESET}"
         log_action "VYMAZÁNO VŠECHNO: $count úkolů"
     else
-        echo -e "${CYEN} Operace zrušena ${RESET}"
+        echo -e "${CYAN} Operace zrušena ${RESET}"
     fi
 }
 
@@ -123,7 +123,7 @@ log_action() {
 show_history() {
     if [ ! -s "$LOG_FILE" ];
     then
-        echo -e "${CYEN} Historie je prázdná ${RESET}"
+        echo -e "${CYAN} Historie je prázdná ${RESET}"
         return
     fi
     echo -e "${GREEN} === HISTORIE OPERACÍ ===${RESET}"
