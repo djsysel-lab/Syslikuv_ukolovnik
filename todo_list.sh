@@ -39,7 +39,6 @@ then
 else
     echo -e "\e[31m FATÁLNÍ CHYBA!! nenalezen soubor : funkce_todo.sh \e[0m "
     echo -e "\e[31m Nelze pokračovat \e[0m "
-    esac
 fi
 
         
