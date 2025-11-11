@@ -6,7 +6,7 @@
 add_task() {
     if [ -z "$1" ];
     then
-        echo -e "${RED} Chyba: Musíte zadat text úkolu ${RESET}"
+        echo -e "${RED} Chyba!!: Musíte zadat text úkolu ${RESET}"
         echo -e "${CYAN} Příklad: $0 add \"Nakoupit mléko\" ${RESET}"
         exit 1
     fi
@@ -38,12 +38,12 @@ list_tasks() {
 mark_done() {
     if [ -z "$1" ];
     then
-        echo -e "${RED} Chyba: Musíte zadat číslo úkolu ${RESET}"
+        echo -e "${RED} Chyba!!: Musíte zadat číslo úkolu ${RESET}"
         exit 1
     fi
     local line_count=$(wc -l < "$TODO_FILE")
     if [ "$1" -gt "$line_count" ] || [ "$1" -lt 1 ]; then
-        echo -e "${RED} Chyba: Neplatné číslo úkolu ${RESET}"
+        echo -e "${RED} Chyba!!: Neplatné číslo úkolu ${RESET}"
         exit 1
     fi
     local task=$(sed -n "${1}p" "$TODO_FILE")
@@ -58,12 +58,12 @@ mark_done() {
 mark_undone() {
     if [ -z "$1" ];
     then
-        echo -e "${RED} Chyba: Musíte zadat číslo úkolu ${RESET}"
+        echo -e "${RED} Chyba!!: Musíte zadat číslo úkolu ${RESET}"
         exit 1
     fi
     local line_count=$(wc -l < "$TODO_FILE")
     if [ "$1" -gt "$line_count" ] || [ "$1" -lt 1 ]; then
-        echo -e "${RED} Chyba: Neplatné číslo úkolu ${RESET}"
+        echo -e "${RED} Chyba!!: Neplatné číslo úkolu ${RESET}"
         exit 1
     fi
     local task=$(sed -n "${1}p" "$TODO_FILE")
@@ -78,12 +78,12 @@ mark_undone() {
 delete_task() {
     if [ -z "$1" ];
     then
-        echo -e "${RED} Chyba: Musíte zadat číslo úkolu ${RESET}"
+        echo -e "${RED} Chyba!!: Musíte zadat číslo úkolu ${RESET}"
         exit 1
     fi
     local line_count=$(wc -l < "$TODO_FILE")
     if [ "$1" -gt "$line_count" ] || [ "$1" -lt 1 ]; then
-       echo -e "${RED} Chyba: Neplatné číslo úkolu ${RESET}"
+       echo -e "${RED} Chyba!!: Neplatné číslo úkolu ${RESET}"
         exit 1
     fi
     local task=$(sed -n "${1}p" "$TODO_FILE")
