@@ -1,5 +1,12 @@
 #!/bin/bash
-       
+
+       # Vytvoření složky, pokud neexistuje
+
+if [ ! -d "$HOME/ukolovnik" ]; 
+then
+    mkdir -p "$HOME/ukolovnik"
+fi
+        
         # Soubor pro uložení úkolů a historie
         
 TODO_FILE="$HOME/ukolovnik/.todo_list.txt"
